@@ -1,0 +1,60 @@
+debug.linux_i386/config.o: Makefile Config.mak  dlls/config.cpp dlls/extdll.h dlls/vector.h \
+ ../hlsdk/common/const.h ../hlsdk/common/in_buttons.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/edict.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/eiface.h \
+ ../hlsdk/engine/archtypes.h ../hlsdk/engine/custom.h \
+ ../hlsdk/common/crc.h ../hlsdk/common/cvardef.h \
+ ../hlsdk/engine/Sequence.h ../hlsdk/engine/../common/crc.h \
+ dlls/cdll_dll.h ../metamod/dllapi.h ../metamod/sdk_util.h \
+ ../metamod/enginecallbacks.h ../hlsdk/dlls/enginecallback.h \
+ ../hlsdk/common/event_flags.h ../metamod/comp_dep.h ../hlsdk/dlls/util.h \
+ ../metamod/osdep.h ../metamod/types_meta.h ../metamod/mreg.h \
+ ../metamod/new_baseclass.h ../metamod/log_meta.h ../metamod/meta_api.h \
+ ../metamod/dllapi.h ../metamod/engine_api.h ../metamod/plinfo.h \
+ ../metamod/mutil.h ../metamod/mhook.h
+debug.linux_i386/dllapi.o: Makefile Config.mak  dlls/dllapi.cpp dlls/extdll.h dlls/vector.h \
+ ../hlsdk/common/const.h ../hlsdk/common/in_buttons.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/edict.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/eiface.h \
+ ../hlsdk/engine/archtypes.h ../hlsdk/engine/custom.h \
+ ../hlsdk/common/crc.h ../hlsdk/common/cvardef.h \
+ ../hlsdk/engine/Sequence.h ../hlsdk/engine/../common/crc.h \
+ dlls/cdll_dll.h ../metamod/dllapi.h ../metamod/sdk_util.h \
+ ../metamod/enginecallbacks.h ../hlsdk/dlls/enginecallback.h \
+ ../hlsdk/common/event_flags.h ../metamod/comp_dep.h ../hlsdk/dlls/util.h \
+ ../metamod/osdep.h ../metamod/types_meta.h ../metamod/mreg.h \
+ ../metamod/new_baseclass.h ../metamod/log_meta.h ../metamod/meta_api.h \
+ ../metamod/dllapi.h ../metamod/engine_api.h ../metamod/plinfo.h \
+ ../metamod/mutil.h ../metamod/mhook.h
+debug.linux_i386/h_export.o: Makefile Config.mak  dlls/h_export.cpp dlls/extdll.h dlls/vector.h \
+ ../hlsdk/common/const.h ../hlsdk/common/in_buttons.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/edict.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/eiface.h \
+ ../hlsdk/engine/archtypes.h ../hlsdk/engine/custom.h \
+ ../hlsdk/common/crc.h ../hlsdk/common/cvardef.h \
+ ../hlsdk/engine/Sequence.h ../hlsdk/engine/../common/crc.h \
+ dlls/cdll_dll.h ../metamod/h_export.h ../metamod/osdep.h \
+ ../metamod/comp_dep.h ../metamod/types_meta.h ../metamod/mreg.h \
+ ../metamod/new_baseclass.h ../metamod/log_meta.h
+debug.linux_i386/sdk_util.o: Makefile Config.mak  dlls/sdk_util.cpp dlls/extdll.h dlls/vector.h \
+ ../hlsdk/common/const.h ../hlsdk/common/in_buttons.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/edict.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/eiface.h \
+ ../hlsdk/engine/archtypes.h ../hlsdk/engine/custom.h \
+ ../hlsdk/common/crc.h ../hlsdk/common/cvardef.h \
+ ../hlsdk/engine/Sequence.h ../hlsdk/engine/../common/crc.h \
+ dlls/cdll_dll.h dlls/enginecallback.h ../hlsdk/common/event_flags.h
+debug.linux_i386/stripper2_api.o: Makefile Config.mak  dlls/stripper2_api.cpp dlls/extdll.h dlls/vector.h \
+ ../hlsdk/common/const.h ../hlsdk/common/in_buttons.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/edict.h \
+ ../hlsdk/engine/progdefs.h ../hlsdk/engine/eiface.h \
+ ../hlsdk/engine/archtypes.h ../hlsdk/engine/custom.h \
+ ../hlsdk/common/crc.h ../hlsdk/common/cvardef.h \
+ ../hlsdk/engine/Sequence.h ../hlsdk/engine/../common/crc.h \
+ dlls/cdll_dll.h ../metamod/meta_api.h ../metamod/comp_dep.h \
+ ../metamod/dllapi.h ../metamod/sdk_util.h ../metamod/enginecallbacks.h \
+ ../hlsdk/dlls/enginecallback.h ../hlsdk/common/event_flags.h \
+ ../hlsdk/dlls/util.h ../metamod/osdep.h ../metamod/types_meta.h \
+ ../metamod/mreg.h ../metamod/new_baseclass.h ../metamod/log_meta.h \
+ ../metamod/engine_api.h ../metamod/plinfo.h ../metamod/mutil.h \
+ ../metamod/mhook.h ../metamod/sdk_util.h
