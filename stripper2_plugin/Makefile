@@ -3,4 +3,4 @@
 # include the Makefile from the metamod directory instead
 # of linking to it.
 
-include ../../metamod/Makefile
+include ../metamod/Makefile

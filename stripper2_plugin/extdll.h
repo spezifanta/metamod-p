@@ -1,9 +1,9 @@
 /***
 *
 *	Copyright (c) 1999, 2000 Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*
+*	This product contains software technology licensed from Id
+*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
 *	All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
@@ -40,12 +40,12 @@
 #define NOMCX
 #define NOIME
 #include <windows.h>
- 
+
 // Misc C-runtime library headers
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
- 
+
 #else
 #include <stdarg.h>
 #include <stdio.h>
@@ -54,22 +54,22 @@
 #include <string.h>
 #include <ctype.h>
 #include <limits.h>
- 
+
 #define MAX_PATH PATH_MAX
 #define ULONG ulong
 #define FALSE 0
 #define TRUE  1
- 
+
 #ifndef max
 #define max(a,b)    (((a) > (b)) ? (a) : (b))
 #endif
- 
+
 #ifndef min
 #define min(a,b)    (((a) < (b)) ? (a) : (b))
 #endif
- 
+
 #define itoa(a,b,c) sprintf(b, "%d", a)
- 
+
 typedef unsigned char BYTE;
 #endif
 

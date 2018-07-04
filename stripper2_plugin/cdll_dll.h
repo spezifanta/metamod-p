@@ -1,9 +1,9 @@
 /***
 *
 *	Copyright (c) 1999, 2000 Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*
+*	This product contains software technology licensed from Id
+*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc.
 *	All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
@@ -20,7 +20,7 @@
 #ifndef CDLL_DLL_H
 #define CDLL_DLL_H
 
-#define MAX_WEAPONS		32		// ???
+#define MAX_WEAPONS		    32		// ???
 
 #define MAX_WEAPON_SLOTS		5	// hud item selection slots
 #define MAX_ITEM_TYPES			6	// hud item selection slots
@@ -30,7 +30,7 @@
 #define	HIDEHUD_WEAPONS		( 1<<0 )
 #define	HIDEHUD_FLASHLIGHT	( 1<<1 )
 #define	HIDEHUD_ALL			( 1<<2 )
-#define 	HIDEHUD_HEALTH		( 1<<3 )
+#define 	HIDEHUD_HEALTH  ( 1<<3 )
 
 #define	MAX_AMMO_TYPES	32		// ???
 #define MAX_AMMO_SLOTS  32		// not really slots
