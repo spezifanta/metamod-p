@@ -33,6 +33,8 @@
  *    version.
  *
  */
+#include <cstring>
+
 #include <fcntl.h>          // open, write
 
 #include <extdll.h>			// always
@@ -63,11 +65,25 @@ const game_modlist_t known_games = {
 // Find a modinfo corresponding to the given game name.
 const game_modinfo_t * DLLINTERNAL lookup_game(const char *name) {
 	const game_modinfo_t *imod;
+	char check_path[NAME_MAX];
 	int i;
 	for(i=0; known_games[i].name; i++) {
 		imod=&known_games[i];
-		if(strcasematch(imod->name, name))
+		// If there are 2 or more same names check next dll file if doesn't exist
+		if(strcasematch(imod->name, name)) {
+			safevoid_snprintf(check_path, sizeof(check_path), "dlls/%s",
+#ifdef _WIN32
+					 imod->win_dll);
+#elif defined(__linux__)
+					 imod->linux_so);
+#endif
+
+			if(!valid_gamedir_file(check_path)) {
+				continue;
+			}
+
 			return(imod);
+		}
 	}
 	// no match found
 	return(NULL);
@@ -132,8 +148,10 @@ mBOOL DLLINTERNAL setup_gamedll(gamedll_t *gamedll) {
 	static char autodetect_desc_buf[NAME_MAX]; // pointer is given outside function
 	char install_path[NAME_MAX];
 	const game_modinfo_t *known;
-	char *cp, *strippedfn;
-	const char *autofn = 0, *knownfn=0, *usedfn = 0;
+#ifdef __linux__
+        char *strippedfn;
+#endif
+	const char *cp, *autofn = 0, *knownfn = 0, *usedfn = 0;
 	int override=0;
 
 	// Check for old-style "metagame.ini" file and complain.
@@ -143,7 +161,7 @@ mBOOL DLLINTERNAL setup_gamedll(gamedll_t *gamedll) {
 	if((known=lookup_game(gamedll->name))) {
 #ifdef _WIN32
 		knownfn=known->win_dll;
-#elif defined(linux)
+#elif defined(__linux__)
 		knownfn=known->linux_so;
 	#ifdef __x86_64__
 		//AMD64: convert _i386.so to _amd64.so
@@ -168,7 +186,7 @@ mBOOL DLLINTERNAL setup_gamedll(gamedll_t *gamedll) {
 		
 		// Do this before autodetecting gamedll from "dlls/*.dll"
 		if(!Config->gamedll) {
-#ifdef linux
+#ifdef __linux__
 			// The engine changed game dll lookup behaviour in that it strips
 			// anything after the last '_' from the name and tries to load the
 			// resulting name. The DSO names were changed and do not have the
@@ -218,7 +236,7 @@ mBOOL DLLINTERNAL setup_gamedll(gamedll_t *gamedll) {
 				META_DEBUG(4, ("Known game DLL name does not qualify for checking for a stripped version, skipping: '%s'.\n",
 								strippedfn) );
 			}
-#endif /* linux */
+#endif /* __linux__ */
 			// If no file to be used was found, try the old known DLL file
 			// name.
 			if (0 == usedfn) {
