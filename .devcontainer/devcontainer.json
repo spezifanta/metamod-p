@@ -1,0 +1,29 @@
+{
+	"name": "MetaMod-P Development Environment",
+	"image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
+	"features": {},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.makefile-tools"
+			],
+			"settings": {
+				"C_Cpp.default.cStandard": "c99",
+				"C_Cpp.default.cppStandard": "c++98",
+				"C_Cpp.default.compilerPath": "/usr/bin/gcc",
+				"C_Cpp.default.intelliSenseMode": "linux-gcc-x86"
+			}
+		}
+	},
+	"runArgs": [
+		"--platform=linux/amd64"
+	],
+	"postCreateCommand": ".devcontainer/setup.sh",
+	"remoteUser": "root",
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+	],
+	"workspaceFolder": "/workspace"
+}
