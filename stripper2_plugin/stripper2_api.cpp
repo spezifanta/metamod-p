@@ -51,8 +51,8 @@ static META_FUNCTIONS gMetaFunctionTable = {
 plugin_info_t Plugin_info = {
    META_INTERFACE_VERSION,                // interface version
    "Stripper2",                           // name
-   "1.0.1",                               // version
-   "2018-07-01",                          // date
+   "1.0.2",                               // version
+   "2025-07-13",                          // date
    "botman <botman@planethalflife.com>",  // author
    "http://planethalflife.com/botman/",   // url
    "STRIPPER2",                           // logtag
@@ -81,10 +81,9 @@ cvar_t *dllapi_log = NULL;
 //  ifvers         (given) interface_version metamod is using
 //  pPlugInfo      (requested) struct with info about plugin
 //  pMetaUtilFuncs   (given) table of utility functions provided by metamod
-C_DLLEXPORT int Meta_Query(char *ifvers, plugin_info_t **pPlugInfo,
+C_DLLEXPORT int Meta_Query(char * /*ifvers*/, plugin_info_t **pPlugInfo,
       mutil_funcs_t *pMetaUtilFuncs)
 {
-   if(ifvers);   // to satisfy gcc -Wunused
    // Give metamod our plugin_info struct
    *pPlugInfo=&Plugin_info;
    // Get metamod utility function table.
@@ -97,10 +96,9 @@ C_DLLEXPORT int Meta_Query(char *ifvers, plugin_info_t **pPlugInfo,
 //  pFunctionTable   (requested) table of function tables this plugin catches
 //  pMGlobals      (given) global vars from metamod
 //  pGamedllFuncs   (given) copy of function tables from game dll
-C_DLLEXPORT int Meta_Attach(PLUG_LOADTIME now, META_FUNCTIONS *pFunctionTable,
+C_DLLEXPORT int Meta_Attach(PLUG_LOADTIME /*now*/, META_FUNCTIONS *pFunctionTable,
       meta_globals_t *pMGlobals, gamedll_funcs_t *pGamedllFuncs)
 {
-   if(now);   // to satisfy gcc -Wunused
    if(!pMGlobals) {
       LOG_ERROR(PLID, "Meta_Attach called with null pMGlobals");
       return(FALSE);
@@ -116,6 +114,8 @@ C_DLLEXPORT int Meta_Attach(PLUG_LOADTIME now, META_FUNCTIONS *pFunctionTable,
    LOG_MESSAGE(PLID, "%s v%s, %s", VNAME, VVERSION, VDATE);
    LOG_MESSAGE(PLID, "by %s", VAUTHOR);
    LOG_MESSAGE(PLID, "   %s", VURL);
+   LOG_MESSAGE(PLID, "   Patch by Alex Kuhrt");
+   LOG_MESSAGE(PLID, "     https://alex.kuhrt.dev");
    LOG_MESSAGE(PLID, "compiled: %s CDT", COMPILE_TIME);
 
    LOG_CONSOLE(PLID, "[%s] %s v%s, %s", VLOGTAG, VNAME, VVERSION, VDATE);
@@ -130,7 +130,6 @@ C_DLLEXPORT int Meta_Attach(PLUG_LOADTIME now, META_FUNCTIONS *pFunctionTable,
 // Metamod detaching plugin from the server.
 // now      (given) current phase, ie during map, etc
 // reason   (given) why detaching (refresh, console unload, forced unload, etc)
-C_DLLEXPORT int Meta_Detach(PLUG_LOADTIME now, PL_UNLOAD_REASON reason) {
-   if(now && reason);   // to satisfy gcc -Wunused
+C_DLLEXPORT int Meta_Detach(PLUG_LOADTIME /*now*/, PL_UNLOAD_REASON /*reason*/) {
    return(TRUE);
 }

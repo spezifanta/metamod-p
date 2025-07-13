@@ -18,8 +18,10 @@ This DevContainer provides a complete development environment for building MetaM
 3. Wait for the container to build and setup to complete
 4. Build the project:
    ```bash
-   make          # Build all components
-   make clean    # Clean build artifacts
+   make            # Build all components
+   make OPT=opt    # Build optimized release version
+   make linux_opt  # Build linux optimized version
+   make clean      # Clean build artifacts
    ```
 
 ## What's Included
